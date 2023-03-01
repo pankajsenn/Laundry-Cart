@@ -6,7 +6,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 mongoose.set('strictQuery', true);
-mongoose.connect(process.env.connection_url, (err) => {
+mongoose.connect(process.env.connection_url,{ useNewUrlParser: true, useUnifiedTopology: true },(err) => {
     if (err) {
         console.log("mongo connection failed ", err);
     }
