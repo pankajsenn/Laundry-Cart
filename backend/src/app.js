@@ -1,13 +1,13 @@
 const express = require('express');
 const cors = require("cors");
 const app = express();
-// const User = require('../src/routes/user');
+const User = require('../src/routes/user');
 const Products = require('../src/routes/product');
-// const Orders = require('../src/routes/order');
+const Orders = require('../src/routes/order');
 app.use(express.json());
 app.use(cors());
-// app.use("/",User);
+app.use("/",User);
 app.use("/",Products);
-// app.use("/",Orders);
+app.use("/",Orders);
 
 module.exports = app;
