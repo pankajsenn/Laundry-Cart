@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Labrada:ital,wght@1,300&family=Open+Sans:ital,wght@0,600;1,600&family=Palanquin&family=Roboto:wght@100;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Labrada:ital,wght@1,300&family=Open+Sans:ital,wght@0,400;1,600&family=Palanquin&family=Roboto:wght@100;400&display=swap');
+
+.model {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(172, 172, 172, 0.737);
+}
+
+tr {
+    width: 100%;
+}
+
+.summary-div {
+    width: 60%;
+    top: 0%;
+    left: 40%;
+    position: fixed;
+    margin-left: auto;
+    background: white;
+    height: 100vh;
+    overflow: auto;
+}
+
+.first-nav ul {
+    background-color: #5861AE;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0px;
+    padding-top: 19px;
+    padding-bottom: 21px;
+    padding-left: 18px;
+    padding-right: 19px;
+}
+
+.first-nav ul li:nth-of-type(odd) {
+    color: #FFFFFF;
+    opacity: 100%;
+    text-align: left;
+    list-style: none;
+    font-size: 20px;
+    font-family: 'Labrada', serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Palanquin', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+.first-nav ul li:nth-of-type(even) {
+    list-style: none;
+    color: #FFFFFF;
+    opacity: 100%;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.second-nav {
+    background-color: #F4F9FF;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 12px 2px;
+    margin-bottom: 0;
+}
+
+.second-nav li {
+    list-style: none;
+    margin-right: 15px;
+}
+
+.second-nav li:nth-of-type(odd) {
+    color: #1B2734;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Labrada', serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Palanquin', sans-serif;
+}
+
+.second-nav li:nth-of-type(even) {
+    color: #1B2734;
+    font-size: 16px;
+    font-family: 'Labrada', serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Palanquin', sans-serif;
+}
+
+.process-div {
+    padding: 12px 15px;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FFFFFF;
+}
+
+#dot {
+    height: 2vh;
+    width: 2vh;
+    border: 1px solid #707070;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+#line {
+    border: 2px solid #707070;
+    width: 150px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#process-name {
+    margin-left: 5px;
+    font-size: 15px;
+}
+
+.summary-table {
+    border-top: 1px solid #EAEDF0;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #FFFFFF;
+}
+
+.summary-table h4 {
+    padding-top: 20px;
+    padding-left: 10px;
+    color: #3B3737;
+}
+
+.summary-table td {
+    padding: 13px 20px;
+    border-bottom: 1px solid #EAEDF0
+}
+
+.summary-table tfoot {
+    flex-direction: column;
+    display: flex;
+}
+
+#btn-total {
+    background-color: #5861AE;
+}
+
+#price {
+    font-size: 20px;
+    letter-spacing: 0.48px;
+    color: #5861AE;
+    opacity: 1;
+    font-weight: 500;
+}
+
+.charges-desc {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.charges {
+    font-weight: 600;
+    font-size: 17px;
+}
+
+#totalprice {
+    height: 40px;
+    background-color: #5861AE;
+}
+
+#totalprice td:nth-child(3) {
+    color: white;
+    font-size: 23px;
+    font-weight: 600;
+}
+
+#totalprice td:nth-child(4) {
+    color: white;
+    font-size: 23px;
+    font-weight: 600;
+}
+
+#address-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row;
+    margin-bottom: 80px;
+}
+
+h3 {
+    margin-left: 10px;
+}
+
+#address-container-1 {
+    width: 30%;
+    text-align: left;
+    margin: 10px;
+    opacity: 1;
+    box-shadow: 0px 3px 6px #00000029;
+    border: 1px solid #5861AE;
+    border-radius: 4px;
+    opacity: 1;
+    padding-left: 3px;
+}
+
+
+#btn-div {
+    text-align: right;
+}
+
+#cancel-btn {
+    width: 17%;
+    height: 35px;
+    margin-bottom: 10px;
+    background: #F41313;
+    border-radius: 4px;
+    opacity: 1;
+    border: none;
+    outline: none;
+    color: #FFFFFF;
+    letter-spacing: 0.86px;
+    font-size: 15px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+#address-container-1 :nth-child(1){
+    display: flex;
+    justify-content: space-between;
+    font-size: 17px;
+    font-weight: 700;
+}
+#address-container-1 :nth-child(1){
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Labrada:ital,wght@1,300&family=Open+Sans:wght@600&family=Palanquin&family=Roboto:wght@100;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Labrada:ital,wght@1,300&family=Open+Sans:wght@400;600&family=Palanquin&family=Roboto:wght@100;400&display=swap');
+
+.content-table {
+    border-collapse: collapse;
+    /* margin: 19vh 3vw 145vh 6vw; */
+    margin: auto;
+    border-radius: 5px 5px 0px 0px;
+    overflow: hidden;
+    width: 90%;
+}
+
+.content-table thead tr {
+    background-color: #383737;
+    color: #FFFFFF;
+    text-align: left;
+    font-size: 12px;
+    max-width: 1293px;
+    font-family: 'Labrada', serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Palanquin', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+.content-table th,
+.content-table td {
+    padding: 12px 15px;
+    margin-left: 50px;
+}
+
+.content-table tbody tr {
+    font-family: 'Labrada', serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Palanquin', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+    font-size: 12px;
+}
+
+.content-table tbody tr {
+    border-bottom: 1px solid #EAEDF0;
+    border-left: 1px solid #EAEDF0;
+    border-right: 1px solid #EAEDF0;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+    background-color: #FAFAFA;
+}
+
+#eye-logo{
+    height: 12px;
+    width: 15px;
+    cursor: pointer;
+}
+
+#cancel-span{
+    color: #EB1717;
+    cursor: pointer;
+}
+
+#status-span{
+    color: #EB1717;
+}
+
