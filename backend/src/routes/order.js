@@ -66,4 +66,19 @@ router.get("/order/get/previous/:email",async(req,res)=>{
         })
     }
 })
+
+router.patch('/order/edit',async(req,res)=>{
+    try{
+        const _id=req.body.id;
+        await Orders.findByIdAndUpdate(_id,{status:"Cancelled"})
+        res.status(200).json({
+            status:'success'
+        })
+    }
+    catch(e){
+        res.status(500).json({
+            status:"Failure"
+        })
+    }
+})
 module.exports = router;
