@@ -1,7 +1,6 @@
 import React from 'react'
 import '../../Components/Summary/orderSummary.css'
 const OrderHistorySummary = (props) => {
-    console.log(props.cancelValue)
     const cancelFunction = () => {
         props.summaryValue(false)
         props.cancel({ ...props.cancelValue, Value: true, id: props.data.Ordered[0]._id })
@@ -53,9 +52,9 @@ const OrderHistorySummary = (props) => {
                                         return (
                                             <tr>
                                                 <td>{value.name}</td>
-                                                <td>{`${value.washtype[0]},${value.washtype[1]}`}</td>
-                                                <td>{`${value.quantity}X${value.price / value.quantity}=`}</td>
-                                                <td>{value.price}</td>
+                                                <td>{value.washtype.join(",")}</td>
+                                                <td>{`${value.quantity}X${value.price}=`}</td>
+                                                <td>{Number(value.quantity*value.price)}</td>
                                             </tr>
                                         )
                                     })
@@ -68,7 +67,7 @@ const OrderHistorySummary = (props) => {
                                     Sub Total
                                 </td>
                                 <td>
-                                    450
+                                    {props.data.Ordered[0].total_price}
                                 </td>
                             </tr>
                             <tr>
@@ -78,6 +77,10 @@ const OrderHistorySummary = (props) => {
                                 <td>
                                     90
                                 </td>
+                            </tr>
+                            <tr>
+                                <td>Grand Total</td>
+                                <td>{props.data.Ordered[0].total_price+90}</td>
                             </tr>
                             <tr>
                                 <td id='btn-total'>Total</td>

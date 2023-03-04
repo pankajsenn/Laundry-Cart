@@ -55,14 +55,15 @@ const OrderHistory = () => {
             return (
               <tr key={data._id}>
                 <td>{data._id}</td>
-                <td>Time</td>
+                <td>{data.createdAt.split("T")[0]}</td>
                 <td>JpNagar</td>
                 <td>Bangalore</td>
                 <td>+919988667755</td>
                 <td>{data.products.length}</td>
-                <td>Price</td>
-                <td>Status
-                  <span>&nbsp;&nbsp;cancel</span>
+                <td>{data.total_price}</td>
+                <td>
+                  <span>{data.status}</span>
+                  {data.status==="Ready to pick up"?<span id='cancel-span' onClick={()=>setCancelAlart({...cancelAlart,Value:true,id:data._id})}>&nbsp;&nbsp;&nbsp;&nbsp;Cancel Order</span>:null}
                 </td>
                 <td><img id="eye-logo" src={logo} alt="View" onClick={() => orderHistoryById(data._id)} /></td>
               </tr>
