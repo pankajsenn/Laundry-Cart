@@ -35,7 +35,7 @@ const OrderHistory = () => {
     <div>
     {summary && <OrderHistorySummary data={orderDataById} summaryValue={setSummary} cancel={setCancelAlart} cancelValue={cancelAlart}/>}
     {cancelAlart.Value && <OrderCancelAlart cancel={setCancelAlart} cancelDetails={cancelAlart} />}
-      <h3>Orders|{userOrderData?.Ordered?.length}</h3>
+      <h3 id='order-h3'>Orders|{userOrderData?.Ordered?.length}</h3>
       <table className='content-table'>
         <thead>
           <tr>
