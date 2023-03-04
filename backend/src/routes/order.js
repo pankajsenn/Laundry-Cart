@@ -7,8 +7,9 @@ router.post("/orders/add", async (req, res) => {
         const _id = "OR"+ Date.now();
         const email = req.body.email;
         const address = req.body.address;
+        const total_price=req.body.total_price;
 
-        const orderdetails = { products: products, _id:_id, email: email, address: address }
+        const orderdetails = {products,_id,email,address,total_price}
 
         const Ordered = await Orders.create(orderdetails);
         res.status(200).json({
