@@ -1,7 +1,13 @@
-import React from 'react'
+import {useEffect} from 'react'
 import alart from '../../Assets/alart.jpg';
 import '../../Components/Alart/orderCancelAlart.css';
 const OrderCancelAlart = (props) => {
+  useEffect(() => {
+    document.body.style.overflowY = 'hidden';
+    return () => {
+      document.body.style.overflowY = 'auto';
+    }
+  }, [])
   const cancelProceed = () => {
     fetch('https://laundry-cart-24v2.onrender.com/order/edit', {
       method: 'PATCH',
@@ -12,12 +18,12 @@ const OrderCancelAlart = (props) => {
         'Content-type': 'application/json; charset=UTF-8',
       },
     })
-    .then((res)=>res.json())
-    .then((data)=>{
-      if(data.status==='success'){
-        props.cancel({ ...props.cancelDetails, Value: false, id: null })
-      }
-    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.status === 'success') {
+          props.cancel({ ...props.cancelDetails, Value: false, id: null })
+        }
+      })
   }
   return (
     <>

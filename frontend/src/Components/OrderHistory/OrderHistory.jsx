@@ -33,7 +33,7 @@ const OrderHistory = () => {
   }, [cancelAlart.Value]);
   return (
     <div>
-    {summary && <OrderHistorySummary data={orderDataById} summaryValue={setSummary} cancel={setCancelAlart} cancelValue={cancelAlart}/>}
+    {summary && <OrderHistorySummary data={orderDataById} summaryValue={setSummary} cancel={setCancelAlart} cancelValue={cancelAlart} summary={summary}/>}
     {cancelAlart.Value && <OrderCancelAlart cancel={setCancelAlart} cancelDetails={cancelAlart} />}
       <h3 id='order-h3'>Orders|{userOrderData?.Ordered?.length}</h3>
       <table className='content-table'>

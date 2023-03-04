@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../../Components/Summary/orderSummary.css'
 const OrderHistorySummary = (props) => {
+    useEffect(()=>{
+        document.body.style.overflowY='hidden';
+        return ()=>{
+            document.body.style.overflowY='auto';
+        }
+    },[])
     const cancelFunction = () => {
         props.summaryValue(false)
         props.cancel({ ...props.cancelValue, Value: true, id: props.data.Ordered[0]._id })
@@ -54,41 +60,52 @@ const OrderHistorySummary = (props) => {
                                                 <td>{value.name}</td>
                                                 <td>{value.washtype.join(",")}</td>
                                                 <td>{`${value.quantity}X${value.price}=`}</td>
-                                                <td>{Number(value.quantity*value.price)}</td>
+                                                <td>{Number(value.quantity * value.price)}</td>
                                             </tr>
                                         )
                                     })
                                 )
                             })
                         }
-                        <tfoot>
-                            <tr>
-                                <td>
-                                    Sub Total
-                                </td>
-                                <td>
-                                    {props.data.Ordered[0].total_price}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Pickup Charges
-                                </td>
-                                <td>
-                                    90
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Grand Total</td>
-                                <td>{props.data.Ordered[0].total_price+90}</td>
-                            </tr>
-                            <tr>
-                                <td id='btn-total'>Total</td>
-                            </tr>
-                        </tfoot>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <span className='charges-desc'>Sub Total</span>
+                            </td>
+
+                            <td>
+                                <span className='charges'>{props.data.Ordered[0].total_price}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <span className='charges-desc'>Pickup Charges</span>
+                            </td>
+                            <td>
+                                <span className='charges'>90</span>
+                            </td>
+                        </tr>
+                        <tr id='totalprice'>
+                            <td></td>
+                            <td></td>
+                            <td>Total</td>
+                            <td>{props.data.Ordered[0].total_price + 90}</td>
+                        </tr>
                     </tbody>
                 </table>
-                <button onClick={cancelFunction}>Cancel</button>
+                <h3>Address</h3>
+                <div id='address-container'>
+                    <div id="address-container-1">
+                        <p>Home</p>
+                        <p>#223, 10th road, Jp Nagar, Bangalore</p>
+                    </div>
+                </div>
+                <div id='btn-div'>
+                    <button onClick={cancelFunction} id="cancel-btn">Cancel</button>
+                </div>
             </div>
         </>
     )
