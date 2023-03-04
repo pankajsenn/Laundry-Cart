@@ -1,0 +1,19 @@
+#searchbar-container{
+    width: 15%;
+    border: none;
+    height: 20px;
+    display: flex;
+    align-items: baseline;
+    border-bottom: 1px solid lightgray;
+    opacity: 1;
+}
+img{
+    width:17px;
+    z-index: 1;
+}
+#searchbar-container:hover{
+height: 24px;
+border-bottom: 1px solid #5861AE;
+cursor: pointer; 
+}
+
