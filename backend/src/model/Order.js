@@ -5,9 +5,10 @@ const Orderschema = mongoose.Schema({
     email:String,
     status:{
         type:String,
-        defalut:"Ready to pick up"
+        default:"Ready to pick up"
     },
-    _id:String
+    _id:String,
+    total_price:Number
 },{ timestamps: true })
 const Orders = mongoose.model("Order",Orderschema);
 
