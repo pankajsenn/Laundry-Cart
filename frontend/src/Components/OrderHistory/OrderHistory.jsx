@@ -30,7 +30,7 @@ const OrderHistory = () => {
   }
   useEffect(() => {
     getOrderHistory()
-  }, []);
+  }, [cancelAlart.Value]);
   return (
     <div>
     {summary && <OrderHistorySummary data={orderDataById} summaryValue={setSummary} cancel={setCancelAlart} cancelValue={cancelAlart}/>}
@@ -62,7 +62,7 @@ const OrderHistory = () => {
                 <td>{data.products.length}</td>
                 <td>{data.total_price}</td>
                 <td>
-                  <span>{data.status}</span>
+                  {data.status==="Cancelled"?<span id='status-span'>{data.status}</span>:<span>{data.status}</span>}
                   {data.status==="Ready to pick up"?<span id='cancel-span' onClick={()=>setCancelAlart({...cancelAlart,Value:true,id:data._id})}>&nbsp;&nbsp;&nbsp;&nbsp;Cancel Order</span>:null}
                 </td>
                 <td><img id="eye-logo" src={logo} alt="View" onClick={() => orderHistoryById(data._id)} /></td>

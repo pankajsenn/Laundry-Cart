@@ -3,7 +3,7 @@ import alart from '../../Assets/alart.jpg';
 import '../../Components/Alart/orderCancelAlart.css';
 const OrderCancelAlart = (props) => {
   const cancelProceed = () => {
-    fetch('https://jsonplaceholder.typicode.com/posts/1', {
+    fetch('https://laundry-cart-24v2.onrender.com/order/edit', {
       method: 'PATCH',
       body: JSON.stringify({
         id: props.cancelDetails.id,
