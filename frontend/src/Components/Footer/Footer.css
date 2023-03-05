@@ -1,0 +1,23 @@
+#footer-container{
+    background: #182838;
+    height: 50px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content:center;
+}
+.footer-icons{
+    color: #FFFFFF;
+    letter-spacing: 0.56px;
+    opacity: 1;
+    text-align: center;
+    margin: 5px;
+}
+#copyright{
+    border: 2px solid white;
+    border-radius: 21px;
+    width: 15px;
+    height: 15px;
+    line-height: 12px;
+}
