@@ -11,11 +11,9 @@ const { body, validationResult } = require("express-validator");
 
 router.post(
   "/login",
-  body("name")
-  .isAlpha()
-  .withMessage("Name should be Alpha")
-  .isLength({ min: 3 })
-  .withMessage("Name should be greater then 2"),
+  body("email")
+  .isEmail()
+  .withMessage("Its not a valid email"),
   body("password")
   .matches(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/)
   .withMessage('Password must contain at least 8 characters including one letter and one number')
