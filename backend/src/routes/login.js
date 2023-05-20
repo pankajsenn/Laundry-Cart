@@ -9,30 +9,10 @@ const SECRET = process.env.SECRET || "Group 17";
 
 const { body, validationResult } = require("express-validator");
 
-router.post(
-  "/login",
-  body("email")
-  .isEmail()
-  .withMessage("Its not a valid email"),
-  body("password")
-  .matches(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/)
-  .withMessage('Password must contain at least 8 characters including one letter and one number')
-  .isString({ min: 6 }),
-  async (req, res) => {
+router.post("/login",async (req, res) => {
     try {
-      const inputErrors = validationResult(req);
-      if (!inputErrors.isEmpty()) {
-        return res.status(400).json({
-          status: "failed",
-          message: "invalid data for user login",
-          errors: inputErrors.array(),
-        });
-      }
       const { email, password } = req.body; 
-
       const user = await User.findOne({ email });
-        
-
       if (!user) {
         res.status(400).json({
           status: "failed",
@@ -62,6 +42,7 @@ router.post(
           });
         }
       }
+    }
     } catch (err) {
       res.status(500).json({
         status: "failed",
